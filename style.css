@@ -188,3 +188,33 @@ footer img {
 .btn-secundario:hover {
     background-color: #3A3D50;
 }
+
+.btnBaixe{
+    margin: 1cap; color: inherit; 
+    background-color: green; 
+    height:50px ;
+    width: 200px; 
+    font-family: 'Share Tech Mono', monospace;
+    border-radius: 10%;
+}
+
+.btnSobreNos{
+    margin: 1cap; 
+    color: inherit; 
+    background-color: inherit; 
+    height:50px ; width: 200px; 
+    font-family: 'Share Tech Mono', monospace;
+    border-radius: 10%;
+}
+.mainHeader{
+    top: 60px;
+    position: fixed;
+}
+
+.mainFooter{
+    bottom: 2px;
+    position: fixed;
+}
+.mainTitle{
+
+}
