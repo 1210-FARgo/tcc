@@ -3,7 +3,6 @@
 // Espera o site carregar completamente antes de rodar o código
 import { supabase } from '../../conn/SupabaseAPIconn.js';
 import { initSiteAuth } from '../common/auth.js';
-// NOVO IMPORT
 import { setupLiveSearch } from '././Content/dropdown.js';
 
 console.log('[home.js] Carregado!');
@@ -170,7 +169,7 @@ async function loadRecommended(userId) {
     if (tag) q = q.contains('tags', [tag]);
     else q = q.order('created_at', { ascending: false });
     
-    const { data } = await q.limit(8); // Pediste 8 decks
+    const { data } = await q.limit(8); 
     
     if (data && data.length > 0) {
         elements.recommendedList.innerHTML = '';
