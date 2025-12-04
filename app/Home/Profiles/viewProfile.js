@@ -8,6 +8,24 @@ const DEFAULT_AVATAR_URL = 'https://wthlsjmxbhtnwacklwci.supabase.co/storage/v1/
 const el = id => document.getElementById(id);
 
 // ... (resto das constantes e inicialização igual) ...
+document.addEventListener('DOMContentLoaded', async () => {
+    // 1. Autenticação (seu código existente)
+    const user = await initSiteAuth({ loginPath: '../HTML/Register/Login.html' });
+    
+    // ... seu código existente ...
+
+    // --- CÓDIGO NOVO: Atualizar o link do Perfil ---
+    if (user) {
+        const profileLink = document.getElementById('myProfileLink');
+        
+        if (profileLink) {
+            // Pega o endereço que já estava no HTML e adiciona o ID do usuário
+            // Exemplo final: ./Profiles/viewProfile.html?id=8475-abc-123
+            const currentHref = profileLink.getAttribute('href');
+            profileLink.href = `${currentHref}?id=${user.id}`;
+        }
+    }
+});
 
 // ==========================================
 // FUNÇÕES DE DADOS (SUPABASE)
