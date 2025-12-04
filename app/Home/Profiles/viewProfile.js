@@ -25,7 +25,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             profileLink.href = `${currentHref}?id=${user.id}`;
         }
     }
-});
+
+
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    // 2. Anexa a função ao clique
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o link de navegar
+            .signOut();
+        });
+    }
+})
 
 // ==========================================
 // FUNÇÕES DE DADOS (SUPABASE)
