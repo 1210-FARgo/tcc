@@ -32,7 +32,7 @@ const elements = {
     filterOpts: document.querySelectorAll('.filter-opt')
 };
 
-// --- 2. INICIALIZAÇÃO (Ao carregar a página) ---
+// --- 2. INICIALIZAÇÃO ---
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('[home.js] DOM Pronto. Iniciando...');
     
@@ -61,9 +61,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             signOut();
         });
     }
+    if (user) {
+        const profileLink = document.getElementById('myProfileLink');
+        
+        if (profileLink) {
+            // Pega o endereço que já estava no HTML e adiciona o ID do usuário
+            // Exemplo final: ./Profiles/viewProfile.html?id=8475-abc-123
+            const currentHref = profileLink.getAttribute('href');
+            profileLink.href = `${currentHref}?id=${user.id}`;
+        }
 });
 
-// --- 3. FUNÇÕES DE INTERFACE (A QUE FALTAVA) ---
+// --- 3. FUNÇÕES DE INTERFACE---
 function initUIEvents() {
     console.log("[home.js] Inicializando eventos de UI...");
 
